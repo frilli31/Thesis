@@ -1,4 +1,17 @@
-\input{tesi-config}                     % file con le impostazioni personali
+% !TEX encoding = UTF-8
+% !TEX TS-program = pdflatex
+% !TEX root = tesi.tex
+% !TEX spellcheck = it-IT
+
+\input{tesi-config}   % file con le impostazioni personali
+                    
+\documentclass[10pt,                    % corpo del font principale
+	a4paper,                 % carta A4
+	twoside,                 % impagina per fronte-retro
+	openright,               % inizio capitoli a destra
+	english,                 
+	italian,                 
+	]{book}
 \input{style}
 
 \begin{document}
@@ -6,9 +19,9 @@
 % Materiale iniziale
 %**************************************************************
 \frontmatter
-\input{inizio-fine/frontespizio}
-\input{inizio-fine/colophon}
-\input{inizio-fine/dedica}
+\input{inizio-fine/frontespizio} 	% Relatore o Tutor Interno ?
+\input{inizio-fine/colophon} 		% DONE
+%\input{inizio-fine/dedica}		
 \input{inizio-fine/sommario}
 \input{inizio-fine/ringraziamenti}
 \input{inizio-fine/indici}
@@ -18,13 +31,10 @@
 % Materiale principale
 %**************************************************************
 \mainmatter
-\input{capitoli/capitolo-1}             % Introduzione
-\input{capitoli/capitolo-2}             % Processi
-\input{capitoli/capitolo-3}             % Kick-Off
-\input{capitoli/capitolo-4}             % Concept Preview
-\input{capitoli/capitolo-5}             % Product Prototype
-\input{capitoli/capitolo-6}             % Product Design Freeze e SOP
-\input{capitoli/capitolo-7}             % Conclusioni
+\input{capitoli/capitolo-1}             % Azienda
+\input{capitoli/capitolo-2}             % Progetto
+\input{capitoli/capitolo-3}             % Svolgimento + Resoconto
+\input{capitoli/capitolo-4}             % Valutazione
 \appendix                               
 \input{capitoli/capitolo-A}             % Appendice A
 

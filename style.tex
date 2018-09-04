@@ -19,13 +19,7 @@
 % !TEX root = tesi.tex
 % !TEX spellcheck = it-IT
 
-\documentclass[10pt,                    % corpo del font principale
-               a4paper,                 % carta A4
-               twoside,                 % impagina per fronte-retro
-               openright,               % inizio capitoli a destra
-               english,                 
-               italian,                 
-               ]{book}    
+    
 
 %**************************************************************
 % Importazione package
@@ -54,7 +48,7 @@
 
 \usepackage{emptypage}                  % pagine vuote senza testatina e piede di pagina
 
-\usepackage{epigraph}			% per epigrafi
+\usepackage{epigraph}					% per epigrafi
 \setlength\epigraphwidth{.7\textwidth}
 %\setlength\epigraphrule{0pt}
 
@@ -183,27 +177,28 @@
 	bookmarksnumbered,
 	bookmarksopen=true,
 	bookmarksopenlevel=1,
-	hypertexnames=true,
+%	hypertexnames=true,
 	pdfhighlight=/O,
 	%nesting=true,
 	%frenchlinks,
 	urlcolor=webbrown,
 	linkcolor=RoyalBlue,
 	citecolor=webgreen,
-	%pagecolor=RoyalBlue,
-	%urlcolor=Black, linkcolor=Black, citecolor=Black, %pagecolor=Black,
+	pagecolor=RoyalBlue,
+	% urlcolor=Blue, linkcolor=Red, citecolor=Green, %pagecolor=Black,
 	pdftitle={\myTitle},
 	pdfauthor={\textcopyright\ \myName, \myUni, \myFaculty},
 	pdfsubject={},
 	pdfkeywords={},
 	pdfcreator={pdfLaTeX},
 	pdfproducer={LaTeX}
+%	hidelinks
 }
 
 %**************************************************************
 % Impostazioni di itemize
 %**************************************************************
-\renewcommand{\labelitemi}{$\ast$}
+%\renewcommand{\labelitemi}{$\ast$}
 
 %\renewcommand{\labelitemi}{$\bullet$}
 %\renewcommand{\labelitemii}{$\cdot$}
@@ -216,7 +211,7 @@
 %**************************************************************
 \lstset{
 	language=[LaTeX]Tex,%C++,
-	keywordstyle=\color{RoyalBlue}, %\bfseries,
+	keywordstyle=\color{Violet}, %\bfseries,
 	basicstyle=\small\ttfamily,
 	%identifierstyle=\color{NavyBlue},
 	commentstyle=\color{Green}\ttfamily,
@@ -255,8 +250,6 @@
 \newcommand{\sectionname}{sezione}
 \addto\captionsitalian{\renewcommand{\figurename}{Figura}
 	\renewcommand{\tablename}{Tabella}}
-
-\newcommand{\glsfirstoccur}{\ap{{[g]}}}
 
 \newcommand{\intro}[1]{\emph{\textsf{#1}}}
 
@@ -333,14 +326,20 @@
 \usepackage{lipsum}
 
 \titleformat{\chapter}[display]
-	{\normalfont\bfseries}
+	{\normalfont\bfseries\centering}
 	{}
 	{10pt}
 	{
-		\Huge
+		\fontsize{30}{40}\selectfont
 		\ifnum\value{chapter} > 0
 			\thechapter
+		\fi
+		\ifnum\value{chapter} = 0
+			\hspace{-2cm}
 		\fi
 		\quad %\vspace{0.5ex}
 	}
 	[\vspace{0.5ex}\titlerule]
+	
+\renewcommand*{\glsnamefont}[1]{\textmd{#1}}
+

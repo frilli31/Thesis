@@ -4,7 +4,6 @@
 
 
 \hypersetup{
-	linkcolor=black, % disattiva colorazione per link dell'indice
 	linktoc=all % 'all' will create links for everything in the TOC
 }
 
@@ -14,35 +13,36 @@
 \cleardoublepage
 \pdfbookmark{\contentsname}{tableofcontents}
 \setcounter{tocdepth}{2}
-\tableofcontents
-%\markboth{\contentsname}{\contentsname} 
-\clearpage
 
-\begingroup 
-    \let\clearpage\relax
-    \let\cleardoublepage\relax
-    \let\cleardoublepage\relax
-    %*******************************************************
-    % Elenco delle figure
-    %*******************************************************    
-    \phantomsection
-    \pdfbookmark{\listfigurename}{lof}
-    \listoffigures
-
-    \vspace*{8ex}
-
-    %*******************************************************
-    % Elenco delle tabelle
-    %*******************************************************
-    \phantomsection
-    \pdfbookmark{\listtablename}{lot}
-    \listoftables
-        
-    \vspace*{8ex}
-\endgroup
+{\hypersetup{linkbordercolor=white,
+	linkcolor=black}
+	
+	\tableofcontents
+	%\markboth{\contentsname}{\contentsname} 
+	\clearpage
+	
+	\begingroup 
+	    \let\clearpage\relax
+	    \let\cleardoublepage\relax
+	    \let\cleardoublepage\relax
+	    %*******************************************************
+	    % Elenco delle figure
+	    %*******************************************************    
+	    \phantomsection
+	    \pdfbookmark{\listfigurename}{lof}
+	    \listoffigures
+	
+	    \vspace*{8ex}
+	
+	    %*******************************************************
+	    % Elenco delle tabelle
+	    %*******************************************************
+	    \phantomsection
+	    \pdfbookmark{\listtablename}{lot}
+	    \listoftables
+	        
+	    \vspace*{8ex}
+	\endgroup
+}
 
 \cleardoublepage
-
-\hypersetup{
-	linkcolor=RoyalBlue
-}
