@@ -1,0 +1,8 @@
+CITAZIONI(epigraph): https://tex.stackexchange.com/questions/193178/specific-epigraph-style
+
+
+GLOSSARIO: \gls{api}. 
+
+CITAZIONE IN LINEA: \cite{site:agile-manifesto}. \\
+
+NOTA PIE DI PAGINA: \footcite{womak:lean-thinking} \\

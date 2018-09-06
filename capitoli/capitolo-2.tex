@@ -9,18 +9,83 @@
 \intro{Descrizione del progetto di stage, motivazioni, tecnologie interessate, obbiettivi}
 %**************************************************************
 
-
-
-\section{L'applicativo attuale}
-
-\section{Nuovo Applicativo}
+\section{L'applicativo}
+	L’azienda utilizza un software gestionale ricco di funzionalità, ma molto datato.
+	Esso infatti è stato sviluppato interamente in PHP ed è basato sul framework QCubed\cite{site:QCubed} che
+	sta per concludere il suo ciclo di vita in quanto è supportato solo da PHP 5.6, una 
+	versione ormai sorpassata da PHP 7 che lo ha sostituito come pacchetto predefinito nel sistema operativo Ubuntu
+	a partire dalla versione 16.04, che vincola il mantenimento del sistema operativo 14.04.
 	
-	\subsection{Sicurezza}
+	Lo scopo dello stage è stato quello di sviluppare un nuovo gestionale, con le stesse
+	funzionalità, ma basato su tecnologie moderne, prestando cura anche al rinnovamento
+	dell’interfaccia grafica. 
+	
+	Nello specifico il software da realizzare  rappresenta il Modulo Amministrativo: esso è uno dei moduli principali in cui è diviso il
+	software di gestione in uso attualmente presso l’azienda. Entra in gioco subito dopo il modulo operativo
+	e si occupa di gestire tutti gli aspetti contabili degli ordini, una volta che questi sono portati a compimento
+	dallo staff. Si divide a propria volta in tre sottomoduli riguardanti le fatture attive, le fatture passive e la
+	gestione dei conti bancari.
+	
+	\subsection{Fatture attive}
+	Il modulo delle fatture attive si occupa di tenere traccia di tutti gli ordini completati e in attesa
+	di fatturazione, della creazione della fattura stessa con la possibilità di specificare i parametri
+	richiesti (data fattura, scadenza, tipo fattura…), della possibilità di inviare le fatture al cliente e
+	la gestione dello scadenziario delle fatture scadute e non ancora incassate.\\
+	Dovrà offrire le seguenti funzionalità:
+	\begin{itemize}
+		\item R1: lista fatture da creare;
+		\item R2: creazione nuova fattura;
+		\item R3: modifica fattura esistente non ancora incassata;
+		\item R4: rimozione fattura esistente non ancora incassata;
+		\item R5: lista fatture create non ancora inviate al cliente;
+		\item R6: invio fattura al cliente tramite email;
+		\item R7: scadenziario fatture emesse da incassare
+		\begin{itemize}
+			\item R7.1: già scadute;
+			\item R7.2: in scadenza.
+		\end{itemize}
+	\end{itemize}
+	
+	
+	\subsection{Fatture passive}
+	Il modulo delle fatture passive si occupa di tenere traccia di tutte le passività relative
+	all’attività. Si dividono in gruppi: dirette e indirette. Le fatture passive dirette rappresentano
+	delle passività direttamente riconducibile ad un preciso ordine (fornitori, agenzie, laboratori,
+	spedizionieri), mentre le indirette rappresentano dei costi generici di gestione (elettricità,
+	bollette telefoniche, affitti,…). Le fatture passive indirette si suddividono a propria volta in
+	due categorie: una tantum e cicliche. \\
+	Dovrà offrire le seguenti funzionalità:
+	\begin{itemize}
+		\item R1: Lista passive dirette non pagate raggruppate per fornitore
+		\begin{itemize}
+			\item R1.1: visione lista fatture per ogni fornitore
+			\item R1.2: visione dettaglio singola fattura
+			\item R1.3: modifica fattura
+			\item R1.4: eliminazione fattura
+		\end{itemize}
+		\item R2: Lista passive indirette (divise tra cicliche e una tantum)
+		\begin{itemize}
+			\item R2.1: visione lista fatture per ogni fornitore
+			\item R2.2: visione dettaglio singola fattura
+			\item R2.3: modifica fattura
+			\item R2.4: eliminazione fattura
+		\end{itemize}
+	\end{itemize}
+	
+	\subsection{Banche}
+	Il modulo banche si occupa di tenere sotto controllo la situazione contabile dei vari conti
+	correnti aziendali.\\
+	Dovrà offrire le seguenti funzionalità:
+	\begin{itemize}
+		\item R1: Visione saldi conti correnti banche
+		\item R2: Visualizzazione fido di cassa
+		\item R3: Visualizzazione saldo reale e saldo disponibile
+	\end{itemize}
+		
 
 \section{Tecnologie Adottate}
-	
-\section{La parte sviluppata}
 
-\section{Obbiettivi Aziendali}
 
-\section{Obbiettivi Personali}
+\section{Strumenti}
+
+
