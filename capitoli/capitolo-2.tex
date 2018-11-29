@@ -6,25 +6,42 @@
 \chapter{Il Progetto}
 \label{cap:progetto}
 
-\intro{Descrizione del progetto di stage, motivazioni, tecnologie interessate, obbiettivi.}
+\intro{Descrizione del progetto di stage, motivazioni, obbiettivi.}
 %**************************************************************
 
 \section{L'applicativo}
+
 	L’azienda utilizza un software gestionale ricco di funzionalità, ma molto datato.
-	Esso infatti è stato sviluppato interamente in \gls{phpg}\cite{site:php} ed è basato sul framework QCubed\cite{site:QCubed} che
-	sta per concludere il suo ciclo di vita in quanto è supportato solo da \gls{phpg} 5.6, una 
-	versione ormai sorpassata da \gls{phpg} 7 che lo ha sostituito come pacchetto predefinito nel sistema operativo Ubuntu
-	a partire dalla versione 16.04, che vincola il mantenimento del sistema operativo 14.04.
+	Esso infatti è stato sviluppato interamente in \gls{phpg}\cite{site:php} ed è basato sul framework \textit{QCubed}\cite{site:QCubed} che
+	sta per concludere il suo ciclo di vita in quanto non è supportato più supportato e non è compatibile con le nuove versioni di \gls{phpg}.
 	\paragraph{\\ \\}
-	Lo scopo dello stage è stato quello di sviluppare un nuovo gestionale, con le stesse
+	Lo scopo dello stage è stato quello di sviluppare un nuovo gestionale che si interfacci con lo stesso database del precedente e con le stesse
 	funzionalità, ma basato su tecnologie moderne, prestando cura anche al rinnovamento
-	dell’interfaccia grafica. 
-	\paragraph{\\ \\}
-	Nello specifico il software da realizzare  rappresenta il Modulo Amministrativo: esso è uno dei moduli principali in cui è diviso il
-	software di gestione in uso attualmente presso l’azienda. Entra in gioco subito dopo il modulo operativo
-	e si occupa di gestire tutti gli aspetti contabili degli ordini, una volta che questi sono portati a compimento
-	dallo staff. Si divide a propria volta in tre sottomoduli riguardanti le fatture attive, le fatture passive e la
-	gestione dei conti bancari.
+	dell’interfaccia grafica.
+	
+	Nello specifico il software da realizzare rappresenta il Modulo Amministrativo: esso è uno dei moduli principali in cui è diviso il
+	software di gestione in uso attualmente presso l’azienda ed si occupa di gestire tutte le fatture e tenere sotto controllo la gestione contabile.
+	
+	Esso si divide in tre sottomoduli: Banche, Fatture Attive e Fatture Passive.
+	
+	\subsection{Banche}
+	Il modulo banche si occupa di tenere sotto controllo la situazione contabile dei vari conti correnti aziendali.\\
+	Dovrà offrire le seguenti funzionalità:
+	\begin{itemize}
+		\item visualizzazione della lista delle banche associata alla sede corrente mostrandone per ognuna:
+			\begin{itemize}
+				\item il saldo reale (inserito manualmente dagli operatori) di ogni banca;
+				\item la data di inserimento del saldo reale;
+				\item il saldo calcolato dal sistema in base ai movimenti bancari inseriti (che dovrebbe coincidere con il saldo reale, se aggiornato);
+				\item il fido di cassa, cioè la somma che la banca mette a disposizione dell' azienda;
+				\item il saldo disponibile, ottenuto sommando il saldo reale al, se presente, il fido di cassa;
+			\end{itemize}
+		\item visione di tutti i movimenti di un conto corrente;
+		\item aggiornamento del saldo di un conto corrente;
+		\item caricamento e visione di estratti conti giornalieri e mensili;
+		\item inserimento, modifica e rimozione di movimenti bancari;
+		\item generazione di file nei formati \textit{PDF} e \textit{xls} della lista dei movimenti bancari.
+	\end{itemize}
 	
 	\subsection{Fatture attive}
 	Il modulo delle fatture attive si occupa di tenere traccia di tutti gli ordini completati e in attesa
@@ -33,59 +50,58 @@
 	la gestione dello scadenziario delle fatture scadute e non ancora incassate.\\
 	Dovrà offrire le seguenti funzionalità:
 	\begin{itemize}
-		\item R1: lista fatture da creare;
-		\item R2: creazione nuova fattura;
-		\item R3: modifica fattura esistente non ancora incassata;
-		\item R4: rimozione fattura esistente non ancora incassata;
-		\item R5: lista fatture create non ancora inviate al cliente;
-		\item R6: invio fattura al cliente tramite email;
-		\item R7: scadenziario fatture emesse da incassare
+		\item visualizzazione degli ordini completati e non ancora fatturati di cui è possibile creare la fattura;
+		\item ricerca di fatture attraverso il numero di ordine o il nome della nave;
+		\item creazione, modifica e rimozione di una fattura;
+		\item visualizzazione della lista di fatture non ancora inviate al cliente;
+		\item generazione di file in formato \textit{PDF} corrispondenti alle fatture;
+		\item invio di fatture al cliente tramite email;
+		\item scadenziario fatture emesse da incassare
 		\begin{itemize}
-			\item R7.1: già scadute;
-			\item R7.2: in scadenza.
+			\item già scadute;
+			\item in scadenza.
 		\end{itemize}
 	\end{itemize}
 	
-	
 	\subsection{Fatture passive}
 	Il modulo delle fatture passive si occupa di tenere traccia di tutte le passività relative
-	all’attività. Si dividono in gruppi: dirette e indirette. Le fatture passive dirette rappresentano
+	all’attività. Si dividono in due gruppi: dirette e indirette. Le fatture passive dirette rappresentano
 	delle passività direttamente riconducibile ad un preciso ordine (fornitori, agenzie, laboratori,
 	spedizionieri), mentre le indirette rappresentano dei costi generici di gestione (elettricità,
 	bollette telefoniche, affitti,…). Le fatture passive indirette si suddividono a propria volta in
 	due categorie: una tantum e cicliche. \\
 	Dovrà offrire le seguenti funzionalità:
 	\begin{itemize}
-		\item R1: Lista passive dirette non pagate raggruppate per fornitore
+		\item visualizzazione lista passive dirette non pagate raggruppate per fornitore;
+		\item visualizzazione lista passive indirette (divise tra cicliche e una tantum);
+		\item visualizzazione lista fatture per ogni fornitore;
+		\item visione dettaglio singola fattura;
+		\item modifica fattura;
+		\item eliminazione fattura;
+		\item generazione del movimento bancario associato (con riempimento automatico dei campi).
+	\end{itemize}	
+
+\section{Obbiettivi}
+Sulla base della durata massima di 320 ore prevista per lo stage, il tutor e lo stagista hanno
+stilato un piano di lavoro e coerentemente hanno concordato gli obbiettivi minimi e massimi che si aspetta di veder raggiunti al termine del
+rapporto lavorativo.
+\\ \\
+Gli obiettivi minimi concordati sono:
+\begin{enumerate}
+	\item comprensione del sotware e del database esistenti;
+	\item studio delle tecnologie;
+	\item studio degli strumenti di sviluppo;
+	\item definire, progettare, codificare e verificare le funzionalità che riguardano i moduli:
 		\begin{itemize}
-			\item R1.1: visione lista fatture per ogni fornitore
-			\item R1.2: visione dettaglio singola fattura
-			\item R1.3: modifica fattura
-			\item R1.4: eliminazione fattura
+			\item Banche;
+			\item Fatture Attive.
 		\end{itemize}
-		\item R2: Lista passive indirette (divise tra cicliche e una tantum)
-		\begin{itemize}
-			\item R2.1: visione lista fatture per ogni fornitore
-			\item R2.2: visione dettaglio singola fattura
-			\item R2.3: modifica fattura
-			\item R2.4: eliminazione fattura
-		\end{itemize}
-	\end{itemize}
-	
-	\subsection{Banche}
-	Il modulo banche si occupa di tenere sotto controllo la situazione contabile dei vari conti
-	correnti aziendali.\\
-	Dovrà offrire le seguenti funzionalità:
+\end{enumerate}
+
+Gli obiettivi massimi concordati sono:
+\begin{enumerate}
+	\item definire, progettare,  codificare e verificare le funzionalità che riguardano il modulo:
 	\begin{itemize}
-		\item R1: Visione saldi conti correnti banche
-		\item R2: Visualizzazione fido di cassa
-		\item R3: Visualizzazione saldo reale e saldo disponibile
+		\item Fatture Passive.
 	\end{itemize}
-		
-
-\section{Tecnologie Adottate}
-
-
-\section{Strumenti}
-
-
+\end{enumerate}

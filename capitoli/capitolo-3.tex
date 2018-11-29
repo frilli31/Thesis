@@ -17,102 +17,60 @@
 	Il modello Agile prevede iterazioni continue, della durata massima di due settimane,
 	entro le quali si susseguono attività di:
 	\begin{enumerate}
-		\item analisi dei requisiti che emergono dall’interazione con il cliente, in questo caso Wintech SpA;
+		\item analisi dei requisiti che emergono dall’interazione con il cliente, in questo caso il tutor aziendale e il Dipartimento di Amministrazione;
 		\item pianificazione delle funzionalità da includere nello sprint, suddivisione in task e loro assegnazione ai membri del team;
 		\item progettazione delle funzionalità da implementare nell’iterazione corrente;
 		\item codifica e sviluppo delle funzionalità previste;
+		\item verifica;
 		\item rilascio;
 		\item monitoraggio continuo e verifica dello stato dell’applicazione.
 	\end{enumerate}
+
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{immagini/agile}
+			\caption{Metologia Agile - Fonte: \url{https://www.cleart.com/what-is-agile-software-development.html}}
+			\label{fig:agile}
+		\end{figure}
 		
 	Il punto di partenza di ogni ciclo è il risultato raggiunto con il precedente e il feedback
 	ricevuto tramite la presentazione della soluzione raggiunta fin’ora agli stakeholder.
 	
-	Ho pianificato uno sprint della duranta di 2 settimane per ogni sottomodulo da realizzare:
-
-	TODO dettaglio pianificazione:
+	La duranta dello stage è stata di 8 settimane quindi ho pianificato 4 sprint della durata di due settimane:
+	\begin{enumerate}
+		\item studio delle tecnologie, degli strumenti di sviluppo e del sotware gestionale esistente;
+		\item progettazione, codifica e testing del modulo Banche;
+		\item progettazione, codifica e testing del modulo Fatture Attive;
+		\item progettazione, codifica e testing del modulo Fatture Passive.
+	\end{enumerate}
 			
 
-\section{Studio soluzione esistente}
-	
+\section{Tecnologie adottate}
 
-\section{Analisi dei Requisiti}
-
-	\subsection{Casi d'uso}
+	\subsection{Django}
+		Per creare il back-end delle applicazioni rivolte ai clienti, il dipartimento utilizza Django,
+		un framework di alto livello gratuito e open source scritto in Python, che incoraggia lo
+		sviluppo veloce e pulito di applicazioni web.
 	
-	Per lo studio dei casi di utilizzo del prodotto sono stati creati dei diagrammi.
-	I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi di tipo \gls{umlg} dedicati alla descrizione delle funzioni o servizi offerti da un sistema, così come sono percepiti e utilizzati dagli attori che interagiscono col sistema stesso.
-	Essendo il progetto finalizzato alla creazione di un tool per l'automazione di un processo, le interazioni da parte dell'utilizzatore devono essere ovviamente ridotte allo stretto necessario. Per questo motivo i diagrammi d'uso risultano semplici e in numero ridotto.
-	
-	\begin{figure}[!h] 
-		\centering 
-		\includegraphics[width=0.9\columnwidth]{usecase/scenario-principale} 
-		\caption{Use Case - UC0: Scenario principale}
-	\end{figure}
-	
-	\begin{usecase}{0}{Scenario principale}
-		\usecaseactors{Sviluppatore applicativi}
-		\usecasepre{Lo sviluppatore è entrato nel plug-in di simulazione all'interno dell'IDE}
-		\usecasedesc{La finestra di simulazione mette a disposizione i comandi per configurare, registrare o eseguire un test}
-		\usecasepost{Il sistema è pronto per permettere una nuova interazione}
-		\label{uc:scenario-principale}
-	\end{usecase}
-	
-	\subsection{Tracciamento dei requisiti}
-	
-	Da un'attenta analisi dei requisiti e degli use case effettuata sul progetto è stata stilata la tabella che traccia i requisiti in rapporto agli use case.\\
-	Sono stati individuati diversi tipi di requisiti e si è quindi fatto utilizzo di un codice identificativo per distinguerli.\\
-	Il codice dei requisiti è così strutturato R(F/Q/V)(N/D/O) dove:
-	\begin{enumerate}
-		\item[R =] requisito
-		\item[F =] funzionale
-		\item[Q =] qualitativo
-		\item[V =] di vincolo
-		\item[N =] obbligatorio (necessario)
-		\item[D =] desiderabile
-		\item[Z =] opzionale
-	\end{enumerate}
-	Nelle tabelle \ref{tab:requisiti-funzionali}, \ref{tab:requisiti-qualitativi} e \ref{tab:requisiti-vincolo} sono riassunti i requisiti e il loro tracciamento con gli use case delineati in fase di analisi.
-	
-	\newpage
-	
-	\begin{table}%
-		\caption{Tabella del tracciamento dei requisti funzionali}
-		\label{tab:requisiti-funzionali}
-		\begin{tabularx}{\textwidth}{lXl}
-			\hline\hline
-			\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
-			\hline
-			RFN-1     & L'interfaccia permette di configurare il tipo di sonde del test & UC1 \\
-			\hline
-		\end{tabularx}
-	\end{table}%
-	
-	\begin{table}%
-		\caption{Tabella del tracciamento dei requisiti qualitativi}
-		\label{tab:requisiti-qualitativi}
-		\begin{tabularx}{\textwidth}{lXl}
-			\hline\hline
-			\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
-			\hline
-			RQD-1    & Le prestazioni del simulatore hardware deve garantire la giusta esecuzione dei test e non la generazione di falsi negativi & - \\
-			\hline
-		\end{tabularx}
-	\end{table}%
-	
-	\begin{table}%
-		\caption{Tabella del tracciamento dei requisiti di vincolo}
-		\label{tab:requisiti-vincolo}
-		\begin{tabularx}{\textwidth}{lXl}
-			\hline\hline
-			\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
-			\hline
-			RVO-1    & La libreria per l'esecuzione dei test automatici deve essere riutilizzabile & - \\
-			\hline
-		\end{tabularx}
-	\end{table}%
 
 \section{Progettazione}
+	L’architettura del prodotto si suddivide in due macro componenti:
+	\begin{itemize}
+		\item \textbf{Client}: rappresenta l’applicativo desktop attraverso cui gli utenti interagis-
+		cono con il front-end dell’applicazione. Il progetto si focalizza sullo sviluppo
+		di questa componente.
+		\item \textbf{Server}: rappresenta il sistema remoto che si occupa di calcolare e rispondere
+		alle richieste del Client, viene implementato tramite il back-end. Lo sviluppo
+		di questa componente non è pertinente al progetto ed è assegnata ad altri
+		dipendenti dell’azienda.
+	\end{itemize}
+
+	Il Client interagirà con il Server tramite delle API messe pubblicate, che sono
+	conformi ai principi REST.
+	
+	Tecnologie adottate
+	
+	Strumenti
 
 \section{Realizzazione}
 
