@@ -32,4 +32,4 @@ call clean.bat
 
 @echo ---------------------------- END -----------------------------
 
-set /p keys=Done...
+tesi.pdf

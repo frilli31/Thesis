@@ -14,6 +14,13 @@
 	modello mi ha permesso di adottare una certa flessibilità e velocità nel rispondere alle
 	esigenze e ai feedback del Dipartimento di Amministrazione.
 	
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.7\linewidth]{immagini/agile}
+		\caption{Metologia Agile \newline  Fonte: \url{https://www.cleart.com/what-is-agile-software-development.html}}
+		\label{fig:agile}
+	\end{figure}
+	
 	Il modello Agile prevede iterazioni continue, della durata massima di due settimane,
 	entro le quali si susseguono attività di:
 	\begin{enumerate}
@@ -25,13 +32,6 @@
 		\item rilascio;
 		\item monitoraggio continuo e verifica dello stato dell’applicazione.
 	\end{enumerate}
-
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.7\linewidth]{immagini/agile}
-			\caption{Metologia Agile - Fonte: \url{https://www.cleart.com/what-is-agile-software-development.html}}
-			\label{fig:agile}
-		\end{figure}
 		
 	Il punto di partenza di ogni ciclo è il risultato raggiunto con il precedente e il feedback
 	ricevuto tramite la presentazione della soluzione raggiunta fin’ora agli stakeholder.
@@ -74,10 +74,36 @@
 
 \section{Realizzazione}
 
-\section{Verifica e Validazione}
-	\subsection{Metriche}
+\section{Verifica e Validazione} % by Navid
+	Durante l’intera attività di sviluppo ho verificato che quanto svolto fosse conforme alle
+	mie aspettative e a quelle del cliente. Per far ciò ho attuato molte prove pratiche sulle
+	funzionalità implementate, per assicurarmi che funzionassero in modo adeguato.
+	L’azienda ha preferito utilizzare le prove pratiche piuttosto che quelle automatizzate,
+	in modo che potessi concentrarmi sull’adeguare il prodotto secondo le loro esigenze.
+	Grazie al lavoro svolto in fase di configurazione dell’ambiente di lavoro, ho potuto
+	testare velocemente l’applicazione in locale con la base di dati contenente i dati reali.
 	
-	\subsection{Risultati}
+	\subsection{Analisi Statica} 
+	Perl’attività di verifica durante tutto l’arco di sviluppo del progetto ho utilizzato TSHint
+	tramite il pacchetto Atom-jshint creato appositamente per l’editor Atom. JSHint è uno
+	strumento di analisi statica del codice JavaScript sviluppato a partire da un fork di
+	JSLint, in quanto l’originale risultava essere troppo meticoloso e non personalizzabile.
+	JSHint mi ha permesso di controllare che il codice fosse uniforme e scritto secondo dei
+	buoni canoni, grazie a degli appositi warning ed errori.
+	% scrennshot di PyCharm e WebStrorm
+	
+	\subsection{Analisi dinamica}
+	Per l’analisi del prodotto software tramite la sua esecuzione mi sono avvalso di Geny-
+	motion, un’applicazione che consente l’emulazione di dispositivi mobile. Ho dapprima
+	richiesto al tutor aziendale quali fossero le configurazioni tipo su cui l’applicazione
+	sarebbe stata eseguita, così da impostare le macchine virtuali su Genymotion. Successivamente, mi sono assicurato di eseguire dei test mirati a controllare il funzionamento
+	delle specifiche funzionalità dell’applicazione, utilizzando i dati reali contenuti nella
+	base di dati copia fornitami dall’azienda.
+	
+	Ho individuato le seguenti funzionalità principali che nel complesso formano l’ap-
+	plicazione:
+	......
 
-\section{Risultato}
+\section{Risultato finale}
+	Descrizione dell'applicazione con screenshot
 	\subsection{Modifiche Migliorative}
