@@ -6,15 +6,46 @@
 \chapter{Il Progetto}
 \label{cap:progetto}
 
-\intro{Descrizione del progetto di stage, motivazioni, obbiettivi.}
+\intro{Descrizione del progetto di stage, motivazioni, obiettivi.}
 %**************************************************************
 
-\section{L'applicativo}
+\section{Aspettative personali}
+	L’attività di stage è obbligatoria e prevista dal piano di studi del corso di laurea.
+	Non avendo ancora nessuna esperienza lavorativa, ero molto emozionato all’idea di fare questo stage, per avere la possibilità di vedere una nuova realtà esterna al mondo
+	universitario. \\
+	Al fine di effetturare la scelta dell'azienda in cui effetture lo stage in modo oculato ho
+	deciso di partecipare all’iniziativa denominata Stage-IT, organizzato da Confindustria Padova in collaborazione con l’Università di Padova e
+	Venezia.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.5\linewidth]{immagini/stageit2018}
+		\caption{Il logo dell'evento Stage-IT}
+		\label{fig:stagit}
+	\end{figure}
+	
+	Prima di andare all’evento, ho stilato una lista di possibili aziende a cui presentarmi, facendo soprattutto attenzione ai progetti proposti. Durante l’evento ho quindi
+	colto l’occasione di discutere dell’attività di stage con molteplici aziende. Molte di tra queste
+	erano più interessate a uno stage per inserimento lavorativo e non è stato possibile trovare un punto di incontro in quanto ero convinto di continuare gli studi dopo l'ottenimento della Laurea Triennale.\\ \\
+	
+	I miei obiettivi iniziali per lo svolgimento dello stage erano i seguenti:
+	\begin{itemize}
+		\item avere l’occasione di imparare una nuove tecnologie;
+		\item integrarmi in un'azienda, apprendere le sue metodologie e capire eventuali difficoltà che si possono incontare in questo processo;
+		\item vedere e capire il funzionamento di una realtà aziendale di medie dimensioni;
+		\item entrare in contatto e confrontarmi con personale esperto e qualificato;
+		\item valutare il mio livello di preparazione, dovuto in gran parte allo studio presso l'Università, rispetto al livello richiesto a ben figurare nel mondo del lavoro.
+	\end{itemize}
+	\vspace{0.5cm}
+	Considerando i miei obiettivi e la lista di aziende con le quali ho avuto un contatto
+	a Stage-IT ho deciso di svolgere lo stage presso \vic{}
 
+
+\section{L'applicativo}
 	L’azienda utilizza un software gestionale ricco di funzionalità, ma molto datato.
 	Esso infatti è stato sviluppato interamente in \gls{phpg}\cite{site:php} ed è basato sul framework \textit{QCubed}\cite{site:QCubed} che
 	sta per concludere il suo ciclo di vita in quanto non è supportato più supportato e non è compatibile con le nuove versioni di \gls{phpg}.
-	\paragraph{\\ \\}
+	\paragraph{\\}
 	Lo scopo dello stage è stato quello di sviluppare un nuovo gestionale che si interfacci con lo stesso database del precedente e con le stesse
 	funzionalità, ma basato su tecnologie moderne, prestando cura anche al rinnovamento
 	dell’interfaccia grafica.
@@ -25,6 +56,7 @@
 	Esso si divide in tre sottomoduli: Banche, Fatture Attive e Fatture Passive.
 	
 	\subsection{Banche}
+	\label{mod:banche}
 	Il modulo banche si occupa di tenere sotto controllo la situazione contabile dei vari conti correnti aziendali.\\
 	Dovrà offrire le seguenti funzionalità:
 	\begin{itemize}
@@ -44,6 +76,7 @@
 	\end{itemize}
 	
 	\subsection{Fatture attive}
+	\label{mod:fa}
 	Il modulo delle fatture attive si occupa di tenere traccia di tutti gli ordini completati e in attesa
 	di fatturazione, della creazione della fattura stessa con la possibilità di specificare i parametri
 	richiesti (data fattura, scadenza, tipo fattura…), della possibilità di inviare le fatture al cliente e
@@ -64,6 +97,7 @@
 	\end{itemize}
 	
 	\subsection{Fatture passive}
+	\label{mod:fp}
 	Il modulo delle fatture passive si occupa di tenere traccia di tutte le passività relative
 	all’attività. Si dividono in due gruppi: dirette e indirette. Le fatture passive dirette rappresentano
 	delle passività direttamente riconducibile ad un preciso ordine (fornitori, agenzie, laboratori,
@@ -81,10 +115,9 @@
 		\item generazione del movimento bancario associato (con riempimento automatico dei campi).
 	\end{itemize}	
 
-\section{Obbiettivi}
+\section{Obiettivi}
 Sulla base della durata massima di 320 ore prevista per lo stage, il tutor e lo stagista hanno
-stilato un piano di lavoro e coerentemente hanno concordato gli obbiettivi minimi e massimi che si aspetta di veder raggiunti al termine del
-rapporto lavorativo.
+stilato un piano di lavoro e coerentemente hanno concordato gli obiettivi minimi e massimi che si aspetta di veder raggiunti al termine del rapporto lavorativo.
 \\ \\
 Gli obiettivi minimi concordati sono:
 \begin{enumerate}
@@ -105,3 +138,18 @@ Gli obiettivi massimi concordati sono:
 		\item Fatture Passive.
 	\end{itemize}
 \end{enumerate}
+
+\section{Vincoli}
+L’applicativo deve integrarsi con i restanti moduli del software gestionale quindi l'azienda ha
+imposto i seguenti vincoli:
+\begin{itemize}
+	\item l’applicativo deve essere conforme ai principi \gls{restg};
+	\item l’applicativo deve utilizzare il formato \gls{json}\cite{site:json} per lo scambio dei dati con il
+	server;
+	\item l’applicativo deve utilizzare \gls{jwt}\cite{site:jwt} per l’autenticazione e
+	gestione della sessione;
+	\item la componente back-end dell'applicativo deve essere sviluppata in linguaggio Python\cite{site:python}
+	utilizzando il framework Django\cite{site:django};
+	\item la componente front-end dell’applicativo deve essere sviluppata utilizzando il framework Angular\cite{site:angular}.
+\end{itemize}
+

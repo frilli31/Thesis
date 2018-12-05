@@ -16,11 +16,24 @@
 \newacronym[description={\glslink{phpg}{PHP: Hypertext Preprocessor}}]
     {php}{PHP}{PHP: Hypertext Preprocessor}
     
+\newacronym{html}{HTML}{HyperText Markup Language}
+
+\newacronym{css}{CSS}{Cascading Style Sheets}
+
 \newacronym{http}{HTTP}{Hypertext Transfer Protocol}
 
-\newacronym{crud}{CRUD}{Create Read Update Delete}
+\newacronym[description={\glslink{crudg}{Create Read Update Delete}}]{crud}{CRUD}{Create Read Update Delete}
 
-\newacronym{url}{URL}{Uniform Resource Locator}
+\newacronym[description={\glslink{urlg}{Uniform Resource Locator}}]{url}{URL}{Uniform Resource Locator}
+
+\newacronym[description={\glslink{jsong}{JavaScript Object Notation}}]{json}{JSON}{JavaScript Object Notation}
+
+\newacronym[description={\glslink{jwtg}{JSON Web Tokens}}]{jwt}{JWT}{JSON Web Tokens}
+
+\newacronym{orm}{ORM}{Object Relational Mapping}
+
+\newacronym{soap}{SOAP}{Simple Object Access Protocol}
+
 
 %**************************************************************
 % Glossario
@@ -35,7 +48,7 @@
     name=\glslink{uml}{UML},
     text=UML,
     sort=uml,
-    description={in ingegneria del software \emph{UML, Unified Modeling Language} (ing. linguaggio di modellazione unificato) è un linguaggio di modellazione e specifica basato sul paradigma object-oriented. L'\emph{UML} svolge un'importantissima funzione di ''lingua franca'' nella comunità della progettazione e programmazione a oggetti. Gran parte della letteratura di settore usa tale linguaggio per descrivere soluzioni analitiche e progettuali in modo sintetico e comprensibile a un vasto pubblico.}
+    description={in ingegneria del software \emph{UML, Unified Modeling Language} (ing. linguaggio di modellazione unificato) è un linguaggio di modellazione e specifica basato sul paradigma object-oriented. L'\emph{UML} svolge un'importantissima funzione di ''lingua franca'' nella comunità della progettazione e programmazione a oggetti. Gran parte della letteratura di settore usa tale linguaggio per descrivere soluzioni analitiche e progettuali in modo sintetico e comprensibile a un vasto pubblico}
 }
 
 \newglossaryentry{restg}
@@ -43,7 +56,7 @@
 	name=\glslink{rest}{REST},
 	text=REST,
 	sort=rest,
-	description={Si tratta di un tipo di architettura software per i sistemi di ipertesto distribuiti come il World Wide Web. Un concetto importante in REST è l’esistenza di risorse (fonti di informazioni), a cui si può accedere tramite un identificatore globale (un URI). Per utilizzare le risorse, le componenti di una rete (componenti client e server) comunicano attraverso una interfaccia standard (ad es. HTTP) e si scambiano rappresentazioni di queste risorse.}
+	description={Si tratta di un tipo di architettura software per i sistemi di ipertesto distribuiti come il World Wide Web. Un concetto importante in REST è l’esistenza di risorse (fonti di informazioni), a cui si può accedere tramite un identificatore globale (un URI). Per utilizzare le risorse, le componenti di una rete (componenti client e server) comunicano attraverso una interfaccia standard (ad es. HTTP) e si scambiano rappresentazioni di queste risorse}
 }
 
 \newglossaryentry{phpg}
@@ -51,7 +64,7 @@
 	name=\glslink{php}{PHP},
 	text=PHP,
 	sort=php,
-	description={Linguaggio di scripting interpretato, con licenza open source e libera, originariamente concepito per la realizzazione di pagine web dinamiche.}
+	description={Linguaggio di scripting interpretato, con licenza open source e libera, originariamente concepito per la realizzazione di pagine web dinamiche}
 }
 
 \newglossaryentry{agileg}
@@ -59,34 +72,64 @@
 	name=\glslink{agileg}{Agile},
 	text=Agile,
 	sort=Agile,
-	description={Insieme di principi per lo sviluppo software sotto i quali requisiti e soluzioni
-		evolvono tramite gli sforzi collettivi del gruppo auto-organizzatopolifunzionale. L’obiettivo di questo modello è soddisfare il cliente, rilasciando software in
+	description={Insieme di principi per lo sviluppo software il cui obiettivo è soddisfare il cliente, rilasciando software in
 		maniera continua e in periodi brevi, in modo che possa osservare l’andamento dello
 		sviluppo e i risultati ottenuti. Di conseguenza è anche lecito accogliere eventuali
-		cambiamenti dei requisiti durante l’intero ciclo di sviluppo.}
+		cambiamenti dei requisiti durante l’intero ciclo di sviluppo
+	}
 }
 
 \newglossaryentry{apig}
 {
-	name=\glslink{apig}{api},
+	name=\glslink{apig}{Api},
 	text=API,
 	sort=Api,
-	description={Insieme di servizi (procedure, funzioni, strutture dati) che un sistema espone in qualche modo ai propri utilizzatori.}
+	description={Insieme di servizi (procedure, funzioni, strutture dati) che un sistema espone in qualche modo ai propri utilizzatori}
 }
 
 \newglossaryentry{urlg} {
-	name=URL,
+	name=\glslink{url}{URL},
+	text=URL,
+	sort=URL,
 	description={
 		URL (Uniform Resource Locator) è una sequenza di caratteri che individua univocamente una risorsa web 
-		collegata alla rete internet.
+		collegata alla rete internet
 	}
 }
 
 \newglossaryentry{crudg} {
-	name=CRUD,
+	name=\glslink{crud}{CRUD},
+	text=CRUD,
+	sort=CRUD,
 	description={
 		CRUD indica le quattro operazioni fondamentali effettuabili su
-		dispositivi di memoriazzazione: creazione (Create), lettura (Read), aggiornamento (Update) e cancellazione (Delete).
+		dispositivi di memoriazzazione: creazione (Create), lettura (Read), aggiornamento (Update) e cancellazione (Delete)
 	}
 }
 
+\newglossaryentry{bootstrapg} {
+	name=\glslink{bootstrapg}{Bootstrap},
+	text=Bootstrap,
+	sort=Bootstrap,
+	description={Bootstrap è una libreria open source per lo sviluppo di pagine web responsive con HTML, CSS e JavaScript
+		utile per velocizzare lo sviluppo della parte grafica delle pagine web
+	}
+}
+
+\newglossaryentry{jsong} {
+	name=\glslink{json}{JSON},
+	text=JSON,
+	sort=JSON,
+	description={
+		 Formato adatto all’interscambio di dati fra applicazioni client-server.
+	}
+}
+
+\newglossaryentry{jwtg} {
+	name=\glslink{jwt}{JWT},
+	text=JWT,
+	sort=JWT,
+	description={
+		JWT è uno standard aperto basato su JSON per la creazione di token di accesso.
+	}
+}

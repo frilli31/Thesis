@@ -4,28 +4,14 @@ Argomenti:
 	Python - DJango
 	Angular (TypeSscript, HTML, CSS)
 
-Ringraziamenti:
-	A silvi crafa, per la passione nell'insegnare e formare, migliorare le persone intorno
-	A Michele, Luca e Lorenzo, pe avermo accompagnato in modo impeccabile nell'inserimento in azienda e aver 
-		reso lo stage un'esperienza di crescita 
-	Al gruppo ASTA senza ls vosta compagnia e il vostro supporto questo percorso non sarebbe 
-		stato lo stesso
-	Ai miei parenti per la fiducia accordatami
-	Ai miei genitori, dire un perchÃ¨ sarebbe riduttivo, siete il mio esempio
-	A tutte le storie da cui ho imparato: 
-		Christiane Vera Felchinorow (Noi, i ragazzi dello zoo di Berlino), 
-		Andrè Agassi (Open)
-		Judith Dumbar (RItorno a casa - Rosamunde Pilcher)
-		
-	
-una citazione per ogni capito:
- - sii gentile, ogni persona sta combattendo una battaglia di cui non sai nulla
+una citazione per ogni capito: ?
 
 
 Il gestionale in uso è interamente in PHP 
 - lento perchè è tutto generato dinamicamente
 - categorizzazione non chiara e da aggiornare
 - per quanto organizzato mescola accesso ad database con eleborazione dei dati, struttura e presentazione
+
 
 Per creare il back-end delle applicazioni rivolte ai dipendenti dell’azienda, il dipartimento
 utilizza QCubed, un framework scritto in PHP tramite il paradigma Model-View-
