@@ -178,7 +178,7 @@ Ho seguito il principio di progettazione \emph{Separation of Concerns} (traduzio
 Il sitema risultante, ad alto livello, è diviso in due componenti principali:
 	\begin{itemize}
 		\item \textbf{Front-end}: si occupa di gestire l'interazione con l'utente ed è responsabile dell'acquisizione dei dati di ingresso e della loro elaborazione in modo tale da renderli utilizzabili dal back end;
-		\item \textbf{Back-end}: si occupa interagire con il database, elaborare i dati e mettere a disposizione i servizi al client ( il front-end).
+		\item \textbf{Back-end}: si occupa interagire con il database, elaborare i dati e mettere a disposizione i servizi al client (il front-end).
 	\end{itemize}
 	
 	Le due componenti sono indipendenti tra loro e comunicano tramite \gls{apig} \gls{restg} nelle quali vengono scambiati dati in formato \gls{json}.
@@ -192,14 +192,14 @@ Il sitema risultante, ad alto livello, è diviso in due componenti principali:
 
 	\subsection{Back-end}
 	Il back-end dell'applicativo è stato realizzato utilizzando i framework \hyperref[tec:django]{Django e Django REST Framework}\cite{site:djangorest}.\\
-	Esso è suddiviso in tre moduli che rispecchiano le tre sezioni dellapplicativo da realizzare:
+	Esso è suddiviso in tre moduli che rispecchiano le tre sezioni dell'applicativo da realizzare:
 	\begin{itemize}
 		\item \textbf{banche};
 		\item \textbf{fatture\_attive};
 		\item \textbf{fatture\_passive}.
 	\end{itemize}
 	
-	Ognuno di questi moduli contiene al suo interno tutti i sottomoduli descritti approfonditamente nella sezione \hyperref{tec:django} in modo da tenere separati oggetti non correlati e quindi facilitarne la manutenibilità e il riuso:
+	Ognuno di questi moduli contiene al suo interno tutti i sottomoduli descritti approfonditamente nella sezione \ref{tec:django} in modo da tenere separati oggetti non correlati e quindi facilitarne la manutenibilità e il riuso:
 	\begin{itemize}
 		\item models;
 		\item serializers;
@@ -210,7 +210,7 @@ Il sitema risultante, ad alto livello, è diviso in due componenti principali:
 
 	\subsection{Front-end}
 	L’utilizzo del framework Angular mi hanno da subito imposto una visione predefinita dell’architettura dell’applicazione. \\
-	Seguendo le direttive dettate dall'utilizzo del framework Angular, spiegate alla sezione \hyperref{tec:angular}, ho diviso l'applicativo in due \emph{package}:
+	Seguendo le direttive dettate dall'utilizzo del framework Angular, spiegate alla sezione \ref{tec:angular}, ho diviso l'applicativo in due \emph{package}:
 	\begin{itemize}
 		\item \textbf{services} che si occupa di contenere tutti i servizi, cioè le classi che forniscono funzionalità condivise da più componenti, nello specifico i metodi di interazione con il back-end;
 		\item \textbf{views} che contiene tutti i moduli, i componenti e i template ad essi associati per la per la realizzazione delle pagine.
